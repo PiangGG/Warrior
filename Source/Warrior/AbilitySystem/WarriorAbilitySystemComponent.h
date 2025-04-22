@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "AbilitySystemComponent.h"
 #include "WarriorAbilitySystemComponent.generated.h"
-
 /**
  * 
  */
