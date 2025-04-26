@@ -26,7 +26,7 @@ void UWarriorGameplayAbility::EndAbility(const FGameplayAbilitySpecHandle Handle
 	{
 		if (ActorInfo)
 		{
-			ActorInfo->AbilitySystemComponent->TryActivateAbility(Handle);
+			ActorInfo->AbilitySystemComponent->ClearAbility(Handle);
 		}
 	}
 }
