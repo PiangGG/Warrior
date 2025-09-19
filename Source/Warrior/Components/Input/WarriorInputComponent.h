@@ -18,16 +18,32 @@ class WARRIOR_API UWarriorInputComponent : public UEnhancedInputComponent
 public:
 	template<class UserObject,typename CallbackFunc>
 	void BindNativeInputAction(const UDataAsset_InputConfig* InputConfig,const FGameplayTag& InInputTag,ETriggerEvent TriggerEvent,UserObject* ContextObject ,CallbackFunc Callback);
+
+	template<class UserObject,typename CallbackFunc>
+	void BindAbilityInputAction(const UDataAsset_InputConfig* InputConfig,UserObject* ContextObject ,CallbackFunc InputPressedFunc,CallbackFunc InputRelasedFunc);
 };
 
 template <class UserObject, typename CallbackFunc>
-void UWarriorInputComponent::BindNativeInputAction(const UDataAsset_InputConfig* InInputConfig,
+void UWarriorInputComponent::BindNativeInputAction(const UDataAsset_InputConfig* InputConfig,
 	const FGameplayTag& InInputTag, ETriggerEvent TriggerEvent, UserObject* ContextObject, CallbackFunc Func)
 {
 	//check(InInputConfig);
-	checkf(InInputConfig,TEXT("输入配置资产为空，不能继续绑定"))
-	if (UInputAction * FoundAction = InInputConfig->FindNativeInputActionByTag(InInputTag))
+	checkf(InputConfig,TEXT("输入配置资产为空，不能继续绑定"))
+	if (UInputAction * FoundAction = InputConfig->FindNativeInputActionByTag(InInputTag))
 	{
 		BindAction(FoundAction,TriggerEvent,ContextObject,Func);
+	}
+}
+
+template <class UserObject, typename CallbackFunc>
+void UWarriorInputComponent::BindAbilityInputAction(const UDataAsset_InputConfig* InputConfig,UserObject* ContextObject, CallbackFunc InputPressedFunc,
+	CallbackFunc InputRelasedFunc)
+{
+	checkf(InputConfig,TEXT("输入配置资产为空，不能继续绑定"))
+	for (const FWarriorInputActionConfig& AbilityInputActionConfig : InputConfig->AbilityInputActions)
+	{
+		if (!AbilityInputActionConfig.IsValid())continue;
+		BindAction(AbilityInputActionConfig.InputAction,ETriggerEvent::Started,ContextObject,InputPressedFunc,AbilityInputActionConfig.InputTag);
+		BindAction(AbilityInputActionConfig.InputAction,ETriggerEvent::Completed,ContextObject,InputRelasedFunc,AbilityInputActionConfig.InputTag);
 	}
 }
