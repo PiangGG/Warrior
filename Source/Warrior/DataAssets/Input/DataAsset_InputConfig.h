@@ -17,6 +17,7 @@ struct FWarriorInputActionConfig
 public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly,meta=(Category="Input"))
 	FGameplayTag InputTag;
+	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	UInputAction* InputAction;
 
