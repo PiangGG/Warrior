@@ -30,5 +30,5 @@ public:
 	AWarriorWeaponBase* GetCharacterCurrentEquippedWeapon();
 private:
 	
-	TMap<FGameplayTag,AWarriorWeaponBase*> CharacterCarridWeaponMap;
+	TMap<FGameplayTag,AWarriorWeaponBase*> CharacterCarriedWeaponMap;
 };

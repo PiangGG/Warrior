@@ -9,10 +9,10 @@
 void UPawnCombatComponent::RegisterSpawnedWeapon(FGameplayTag InWeaponTagToRegister,
                                                  AWarriorWeaponBase* InWeaponToRegister, bool bRegisterAsEquippedWeapon)
 {
-	checkf(!CharacterCarridWeaponMap.Contains(InWeaponTagToRegister),TEXT("A named named %s has already been added as carried weapon"),*InWeaponTagToRegister.ToString())
+	checkf(!CharacterCarriedWeaponMap.Contains(InWeaponTagToRegister),TEXT("A named named %s has already been added as carried weapon"),*InWeaponTagToRegister.ToString())
 	check(InWeaponToRegister)
 
-	CharacterCarridWeaponMap.Emplace(InWeaponTagToRegister,InWeaponToRegister);
+	CharacterCarriedWeaponMap.Emplace(InWeaponTagToRegister,InWeaponToRegister);
 
 	if (bRegisterAsEquippedWeapon)
 	{
@@ -25,9 +25,9 @@ void UPawnCombatComponent::RegisterSpawnedWeapon(FGameplayTag InWeaponTagToRegis
 
 AWarriorWeaponBase* UPawnCombatComponent::GetCharacterCarriedWeaponByTag(FGameplayTag InWeaponTagToGet) const
 {
-	if (CharacterCarridWeaponMap.Contains(InWeaponTagToGet))
+	if (CharacterCarriedWeaponMap.Contains(InWeaponTagToGet))
 	{
-		if (AWarriorWeaponBase* const* FoundWeapon  = CharacterCarridWeaponMap.Find(InWeaponTagToGet))
+		if (AWarriorWeaponBase* const* FoundWeapon  = CharacterCarriedWeaponMap.Find(InWeaponTagToGet))
 		{
 			return *FoundWeapon;
 		}

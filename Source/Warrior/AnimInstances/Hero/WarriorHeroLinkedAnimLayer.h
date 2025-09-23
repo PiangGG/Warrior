@@ -6,6 +6,7 @@
 #include "Warrior/AnimInstances/WarriorAnimInstance.h"
 #include "WarriorHeroLinkedAnimLayer.generated.h"
 
+class UWarriorHeroAnimInstance;
 /**
  * 
  */
