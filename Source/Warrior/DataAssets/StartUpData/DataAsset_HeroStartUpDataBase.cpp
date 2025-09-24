@@ -5,14 +5,11 @@
 
 #include "Warrior/AbilitySystem/WarriorAbilitySystemComponent.h"
 #include "Warrior/AbilitySystem/Abilities/WarriorGameplayAbility.h"
+#include "Warrior/WarriorTypes/WarriorStructTypes.h"
 
-bool FWarriorHeroAbility::IsValid() const
-{
-	return InputTag.IsValid() && AbilityToGrant;
-}
 
 void UDataAsset_HeroStartUpDataBase::GiveToWarriorAbilitySystemComponent(UWarriorAbilitySystemComponent* InAscToGive,
-	int32 ApplyLevel)
+                                                                         int32 ApplyLevel)
 {
 	Super::GiveToWarriorAbilitySystemComponent(InAscToGive, ApplyLevel);
 
