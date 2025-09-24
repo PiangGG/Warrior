@@ -18,6 +18,6 @@ class WARRIOR_API UDataAsset_HeroStartUpDataBase : public UDataAsset_StartUpData
 
 	virtual void GiveToWarriorAbilitySystemComponent(UWarriorAbilitySystemComponent* InAscToGive,int32 ApplyLevel = 1)override;
 private:
-	UPROPERTY(EditDefaultsOnly,Category="StartUpData",meta=(TitleProperty="Input"))
+	UPROPERTY(EditDefaultsOnly,Category="StartUpData",meta=(TitleProperty="InputTag"))
 	TArray<FWarriorHeroAbilitySet> HeroStartUpAbilitySets;
 };
