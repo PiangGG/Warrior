@@ -22,4 +22,6 @@ namespace WarriorGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(Player_Event_UnEquip_Axe,"Player.Event.UnEquip.Axe");
 	
 	UE_DEFINE_GAMEPLAY_TAG(Player_State_JumpToFinisher,"Player.State.JumpToFinisher");
+	
+	UE_DEFINE_GAMEPLAY_TAG(Enemy_Weapon,"Enemy.Weapon");
 }
