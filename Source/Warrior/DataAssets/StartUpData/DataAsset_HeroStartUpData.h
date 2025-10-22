@@ -4,15 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "DataAsset_StartUpDataBase.h"
-#include "GameplayTagContainer.h"
-#include "DataAsset_HeroStartUpDataBase.generated.h"
+#include "DataAsset_HeroStartUpData.generated.h"
 
 struct FWarriorHeroAbilitySet;
 /**
  * 
  */
 UCLASS()
-class WARRIOR_API UDataAsset_HeroStartUpDataBase : public UDataAsset_StartUpDataBase
+class WARRIOR_API UDataAsset_HeroStartUpData : public UDataAsset_StartUpDataBase
 {
 	GENERATED_BODY()
 

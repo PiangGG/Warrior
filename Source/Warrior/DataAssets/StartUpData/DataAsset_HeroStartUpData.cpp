@@ -1,14 +1,14 @@
 // Piang
 
 
-#include "DataAsset_HeroStartUpDataBase.h"
+#include "DataAsset_HeroStartUpData.h"
 
 #include "Warrior/AbilitySystem/WarriorAbilitySystemComponent.h"
-#include "Warrior/AbilitySystem/Abilities/WarriorGameplayAbility.h"
+#include "Warrior/AbilitySystem/Abilities/WarriorHeroGameplayAbility.h"
 #include "Warrior/WarriorTypes/WarriorStructTypes.h"
 
 
-void UDataAsset_HeroStartUpDataBase::GiveToWarriorAbilitySystemComponent(UWarriorAbilitySystemComponent* InAscToGive,
+void UDataAsset_HeroStartUpData::GiveToWarriorAbilitySystemComponent(UWarriorAbilitySystemComponent* InAscToGive,
                                                                          int32 ApplyLevel)
 {
 	Super::GiveToWarriorAbilitySystemComponent(InAscToGive, ApplyLevel);
