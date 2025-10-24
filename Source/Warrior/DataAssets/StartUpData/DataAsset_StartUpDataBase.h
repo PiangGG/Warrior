@@ -30,3 +30,4 @@ protected:
 	TArray<TSubclassOf<UGameplayEffect>> StartUpGameplayEffects;
 	void GrantAbilities(const TArray<TSubclassOf<UWarriorGameplayAbility>>& InAbilitiesToGive,UWarriorAbilitySystemComponent* InAscToGive,int32 ApplyLevel = 1);
 };
+
