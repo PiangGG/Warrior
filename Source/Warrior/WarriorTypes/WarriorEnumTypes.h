@@ -13,3 +13,10 @@ enum class EWarriorValidType :uint8
 	Valid,
 	InValid
 };
+
+UENUM(BlueprintType)
+enum class EWarriorSuccessType :uint8
+{
+	Successful,
+	Failed
+};
