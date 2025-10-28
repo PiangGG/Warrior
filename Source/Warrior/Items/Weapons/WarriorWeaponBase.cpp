@@ -32,7 +32,8 @@ void AWarriorWeaponBase::OnCollisionBoxBeginOverlap(UPrimitiveComponent* Overlap
 	{
 		if (HitPawn != WeaponOwningPawn)
 		{
-			Debug::Print(GetName()+TEXT("Begin overlap with ")+HitPawn->GetName(),FColor::Green);
+			//Debug::Print(GetName()+TEXT("Begin overlap with ")+HitPawn->GetName(),FColor::Green);
+			OnWeaponHitTarget.ExecuteIfBound(OtherActor);
 		}
 	}
 }
@@ -46,7 +47,8 @@ void AWarriorWeaponBase::OnCollisionBoxEndOverlap(UPrimitiveComponent* Overlappe
 	{
 		if (HitPawn != WeaponOwningPawn)
 		{
-			Debug::Print(GetName()+TEXT("End overlap with ")+HitPawn->GetName(),FColor::Red);
+			//Debug::Print(GetName()+TEXT("End overlap with ")+HitPawn->GetName(),FColor::Red);
+			OnWeaponPullFromTarget.ExecuteIfBound(OtherActor);
 		}
 	}
 }
