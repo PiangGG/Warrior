@@ -18,6 +18,10 @@ public:
 	AWarriorWeaponBase();
 
 protected:
+	UFUNCTION()
+	void OnCollisionBoxBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResul);
+	UFUNCTION()
+	void OnCollisionBoxEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 	
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="Weapons")
 	UStaticMeshComponent* WeaponMesh;
