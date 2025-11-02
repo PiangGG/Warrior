@@ -3,6 +3,7 @@
 
 #include "WarriorHeroGameplayAbility.h"
 
+#include "Warrior/WarriorGameplayTags.h"
 #include "Warrior/AbilitySystem/WarriorAbilitySystemComponent.h"
 #include "Warrior/Characters/WarriorHeroCharacter.h"
 #include "Warrior/Controllers/WarriorHeroPlayerController.h"
@@ -40,7 +41,7 @@ FGameplayEffectSpecHandle UWarriorHeroGameplayAbility::MakeHeroDamageEffectSpecH
 
 	FGameplayEffectSpecHandle EffectSpecHandle = GetWarriorAbilitySystemComponentFromActorInfo()->MakeOutgoingSpec(EffectClass,GetAbilityLevel(),ContextHandle);
 
-	EffectSpecHandle.Data->SetSetByCallerMagnitude(InCurrentAttackTypeTag,InWeaponBaseDamage);
+	EffectSpecHandle.Data->SetSetByCallerMagnitude(WarriorGameplayTags::Shared_SetByCaller_BaseDamage,InWeaponBaseDamage);
 	if (InCurrentAttackTypeTag.IsValid())
 	{
 		EffectSpecHandle.Data->SetSetByCallerMagnitude(InCurrentAttackTypeTag,InUsedComboCount);
