@@ -55,7 +55,7 @@ FActiveGameplayEffectHandle UWarriorGameplayAbility::NativeApplyEffectSpecHandle
 
 FActiveGameplayEffectHandle UWarriorGameplayAbility::BP_ApplyEffectSpecHandleToTarget(AActor* TargetActor,
 	const FGameplayEffectSpecHandle& InSpecHandle, EWarriorSuccessType& OutSuccessType)
-{
+	{
 	FActiveGameplayEffectHandle ActiveGameplayEffectHandle = NativeApplyEffectSpecHandleToTarget(TargetActor,InSpecHandle);
 	OutSuccessType =ActiveGameplayEffectHandle.WasSuccessfullyApplied()?EWarriorSuccessType::Successful:EWarriorSuccessType::Failed;
 	return ActiveGameplayEffectHandle;
