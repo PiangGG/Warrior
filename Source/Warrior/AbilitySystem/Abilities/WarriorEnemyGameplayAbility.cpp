@@ -7,7 +7,7 @@
 
 AWarriorEnemyCharacter* UWarriorEnemyGameplayAbility::GetEnemyCharacterFromActorInfo()
 {
-	if (CachedWarriorEnemyCharacter.IsValid())
+	if (!CachedWarriorEnemyCharacter.IsValid())
 	{
 		CachedWarriorEnemyCharacter = Cast<AWarriorEnemyCharacter>(CurrentActorInfo->AvatarActor);
 	}
